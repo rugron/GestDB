@@ -7,7 +7,6 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
 		// getConnection(); //prima parte prima del CreateTable
 		//CreateTable(); // seconda parte 
 		insert(); //terza parte
@@ -16,7 +15,7 @@ public class Main {
 	public static void CreateTable() throws Exception {
 		try{
 			Connection con = getConnection();
-			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS peppe(idimpiegati int NOT NULL AUTO_INCREMENT,nome varchar(45),cognome varchar(45),citt‡ varchar(45),PRIMARY KEY(idimpiegati))"); 
+			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS peppe(idimpiegati int NOT NULL AUTO_INCREMENT,nome varchar(45),cognome varchar(45),citt√† varchar(45),PRIMARY KEY(idimpiegati))"); 
 			create.executeUpdate();
 		}//aggiungo un'altra tabella nell'elenco dei database
 		catch(Exception e){System.out.println(e);}
@@ -28,10 +27,10 @@ public class Main {
 	public static void insert() {
 		String nome = "peppe";
 		String cognome = "ruggio";
-		String citt‡ = "rrreggio";
+		String citt√† = "rrreggio";
 		try {
 			Connection c = getConnection();
-			PreparedStatement obj = c.prepareStatement("INSERT INTO peppe (nome,cognome,citt‡) VALUES ('"+nome+"','"+cognome+"','"+citt‡+"')");
+			PreparedStatement obj = c.prepareStatement("INSERT INTO peppe (nome,cognome,citt√†) VALUES ('"+nome+"','"+cognome+"','"+citt√†+"')");
 			obj.executeUpdate();
 			}catch(Exception e) {System.out.println(e);}
 			finally {System.out.println("Inserted!");}
